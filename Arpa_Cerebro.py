@@ -4,7 +4,11 @@ import pygame
 from time import sleep
 from sys import exit
 import serial
+import alsaaudio
 
+m = alsaaudio.Mixer('PCM')
+current_volume = m.getvolume() # Get the current Volume
+m.setvolume(90)
 
 pygame.init()
 pygame.mixer.init(44100, -16, 1, 1024) 
